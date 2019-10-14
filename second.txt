@@ -1,0 +1,56 @@
+/*package whatever //do not write package name here */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class GFG {
+	public static void main (String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int t = sc.nextInt();
+
+		for(int i = 0 ; i < t ; i++){
+		    int n = sc.nextInt();
+		    int m = sc.nextInt();
+		    int arr1[] = new int[n];
+		    int arr2[] = new int[m];
+		    int arr3[] = new int[n+m];
+		    for(int j = 0 ; j < n ; j++){
+		        arr1[j] = sc.nextInt();
+		    }
+		    for(int j = 0 ; j < m ; j++){
+		        arr2[j] = sc.nextInt();
+		    }
+		    int counter1 = 0, counter2 = 0, counter3 = 0;
+		    while(counter1 < n && counter2 < m){
+		        if(arr1[counter1] < arr2[counter2]){
+		            arr3[counter3] = arr1[counter1];
+		            counter1++;
+		            counter3++;
+		            
+		        }
+		        else{
+		            arr3[counter3] = arr2[counter2];
+		            counter2++;
+		            counter3++;
+		        }
+		    }
+		    while(counter1 < n){
+		        arr3[counter3] = arr1[counter1];
+		        counter1++;
+		        counter3++;
+		    }
+		    while(counter2 < m){
+		        arr3[counter3] = arr2[counter2];
+		        counter2++;
+		        counter3++;
+		    }
+		    
+		    for(int j = 0 ; j < n+m ; j++){
+		        System.out.print(arr3[j]+" ");
+		    }
+		     
+		    System.out.println();
+		}
+	}
+}
