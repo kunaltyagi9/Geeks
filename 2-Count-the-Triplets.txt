@@ -1,0 +1,31 @@
+class GFG {
+	public static void main (String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int t = sc.nextInt();	
+		for(int i = 0 ; i < t ; i++){
+		    int n = sc.nextInt();
+		    int arr[] = new int[n];
+		    
+		    for(int j = 0 ; j < n ; j++){
+		        arr[j] = sc.nextInt();
+		    }
+		    Arrays.sort(arr);
+		    int counter = 0, sum = 0;
+		    boolean flag = false;
+		    for(int j = 0 ; j < n-1 ; j++){
+		        for(int k =  j+1 ; k < n ; k++){
+		            sum = arr[j] + arr[k];
+		            if(Arrays.binarySearch(arr,sum)>0){
+		                counter++;
+		                flag = true;
+		            }
+		        }   
+		    }  
+		    if(flag){
+		        System.out.println(counter);
+		    }else{
+		        System.out.println("-1");
+		    }
+		}
+	}
+}

@@ -1,0 +1,31 @@
+class GFG {
+	public static void main (String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int t = sc.nextInt();
+		for(int i = 0 ; i < t ; i++){
+		    int n = sc.nextInt();
+		    int sum = sc.nextInt();
+		    int arr[] = new int[n];
+		    
+		    int s = 0, counter = 0;
+		    
+		    for(int j = 0 ; j < n ; j++){
+		        arr[j]  = sc.nextInt();
+		    }    
+		    for(int j = 0 ; j < n ; j++){
+		        if(s < sum){
+		            s += arr[j];
+		        }
+		        if(s > sum){
+		            s -= arr[counter];
+		            counter++;
+		        }
+		        if(s == sum){
+		            System.out.println((counter+1) + " "+ (j+1));
+		            break;
+		        }
+		    }
+		}
+	}
+}
+
